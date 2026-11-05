@@ -6,12 +6,12 @@
   <title>Con Fig Neural Panel</title>
   <style>
     :root {
-      --bg-color: #060913;
-      --card-bg: rgba(30, 144, 255, 0.03);
-      --card-border: rgba(30, 144, 255, 0.2);
-      --ai-blue: #1e90ff;
-      --ai-light: #87cefa;
-      --ai-glow: rgba(30, 144, 255, 0.35);
+      --bg-color: #060202;
+      --card-bg: rgba(139, 0, 0, 0.04);
+      --card-border: rgba(220, 20, 60, 0.25);
+      --bloody-red: #dc143c;
+      --bloody-light: #ff6b6b;
+      --bloody-glow: rgba(220, 20, 60, 0.35);
       --text-color: #f3f4f6;
       --text-dim: #9ca3af;
     }
@@ -24,7 +24,7 @@
     }
 
     body {
-      background: radial-gradient(circle at 50% 0%, #0d1b2a, var(--bg-color));
+      background: radial-gradient(circle at 50% 0%, #2a0808, var(--bg-color));
       color: var(--text-color);
       min-height: 100vh;
       display: flex;
@@ -42,34 +42,34 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(30, 144, 255, 0.1);
+      background: rgba(220, 20, 60, 0.12);
       border: 1px solid var(--card-border);
       padding: 0.35rem 0.85rem;
       border-radius: 50px;
       font-size: 0.8rem;
-      color: var(--ai-light);
+      color: var(--bloody-light);
       margin-bottom: 0.75rem;
-      box-shadow: 0 0 15px var(--ai-glow);
+      box-shadow: 0 0 15px var(--bloody-glow);
     }
 
     .ai-badge span {
       width: 8px;
       height: 8px;
-      background: var(--ai-blue);
+      background: var(--bloody-red);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--ai-blue);
+      box-shadow: 0 0 8px var(--bloody-red);
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
       0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px var(--ai-blue); }
+      50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px var(--bloody-red); }
       100% { transform: scale(0.95); opacity: 0.8; }
     }
 
     header h1 {
       font-size: 2.5rem;
-      background: linear-gradient(135deg, #ffffff, var(--ai-light), var(--ai-blue));
+      background: linear-gradient(135deg, #ffffff, var(--bloody-light), var(--bloody-red));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 800;
@@ -99,14 +99,14 @@
 
     .config-control label {
       font-size: 0.85rem;
-      color: var(--ai-light);
+      color: var(--bloody-light);
       font-weight: 600;
     }
 
     .config-control input {
       width: 100%;
       background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(30, 144, 255, 0.3);
+      border: 1px solid rgba(220, 20, 60, 0.4);
       border-radius: 8px;
       padding: 0.75rem 1rem;
       color: #fff;
@@ -116,8 +116,8 @@
     }
 
     .config-control input:focus {
-      border-color: var(--ai-blue);
-      box-shadow: 0 0 10px var(--ai-glow);
+      border-color: var(--bloody-red);
+      box-shadow: 0 0 10px var(--bloody-glow);
     }
 
     .grid {
@@ -140,8 +140,8 @@
 
     .card:hover {
       transform: translateY(-4px);
-      border-color: var(--ai-blue);
-      box-shadow: 0 12px 40px rgba(30, 144, 255, 0.2);
+      border-color: var(--bloody-red);
+      box-shadow: 0 12px 40px rgba(220, 20, 60, 0.25);
     }
 
     .card-header {
@@ -152,15 +152,15 @@
     }
 
     .badge {
-      background: rgba(30, 144, 255, 0.12);
-      color: var(--ai-light);
+      background: rgba(220, 20, 60, 0.15);
+      color: var(--bloody-light);
       padding: 0.25rem 0.65rem;
       border-radius: 20px;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      border: 1px solid rgba(30, 144, 255, 0.2);
+      border: 1px solid rgba(220, 20, 60, 0.3);
     }
 
     .card h2 {
@@ -176,7 +176,7 @@
       padding: 0.85rem;
       font-family: monospace;
       font-size: 0.78rem;
-      color: var(--ai-light);
+      color: var(--bloody-light);
       word-break: break-all;
       margin-bottom: 1rem;
       max-height: 90px;
@@ -201,14 +201,14 @@
     }
 
     .btn-copy {
-      background: linear-gradient(135deg, #1e90ff, #00bfff);
+      background: linear-gradient(135deg, #dc143c, #8b0000);
       color: #fff;
-      box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(220, 20, 60, 0.35);
     }
 
     .btn-copy:hover {
       opacity: 0.9;
-      box-shadow: 0 6px 20px rgba(30, 144, 255, 0.5);
+      box-shadow: 0 6px 20px rgba(220, 20, 60, 0.55);
     }
 
     footer {
@@ -219,13 +219,12 @@
       text-align: center;
     }
 
-    /* Custom Toast Notification Styles */
     #toast-notification {
       position: fixed;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: linear-gradient(135deg, #1e90ff, #ff69b4);
+      background: linear-gradient(135deg, #dc143c, #8b0000);
       color: #fff;
       padding: 12px 24px;
       border-radius: 30px;
@@ -314,7 +313,6 @@
     &copy; Con Fig System &bull; All Rights Reserved
   </footer>
 
-  <!-- Custom Toast Notification Element -->
   <div id="toast-notification">✅CONGRATS TOL✅<br>🫰Na Copy Na Ang Config👌</div>
 
   <script>
@@ -326,7 +324,6 @@
         const obj = {"add":"apps.google.com","port":"443","id":"b1b2c3d4-5678-40ef-98ab-cdef01234589","aid":"0","scy":"chacha20-poly1305","net":"ws","type":"none","host":h,"path":"/vmess-predikta351","tls":"tls","sni":"firebaseremoteconfigrealtime.googleapis.com","ps":"GCP-VMESS-WS","v":"2"};
         return "vmess://" + btoa(JSON.stringify(obj));
       },
-      // Binagong Shadowsocks URL structure gamit ang iyong bagong payload format
       ssWs: "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwcmVkaWt0YS0zNTE=@apps.google.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fss-predikta351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#SHADOWSOCKS-WS"
     };
 
