@@ -265,9 +265,9 @@
         <h2>Trojan</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="box-trojan-ws"></div>
+      <div class="code-box" id="boxTrojanWs"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('box-trojan-ws')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('boxTrojanWs')">Copy Config</button>
       </div>
     </div>
 
@@ -276,9 +276,9 @@
         <h2>VLESS</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="box-vless-ws"></div>
+      <div class="code-box" id="boxVlessWs"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('box-vless-ws')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('boxVlessWs')">Copy Config</button>
       </div>
     </div>
 
@@ -287,9 +287,9 @@
         <h2>VMess</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="box-vmess-ws"></div>
+      <div class="code-box" id="boxVmessWs"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('box-vmess-ws')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('boxVmessWs')">Copy Config</button>
       </div>
     </div>
 
@@ -298,9 +298,9 @@
         <h2>Shadowsocks</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="box-ss-ws"></div>
+      <div class="code-box" id="boxSsWs"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('box-ss-ws')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('boxSsWs')">Copy Config</button>
       </div>
     </div>
   </main>
@@ -312,41 +312,40 @@
   <div id="toast-notification">✅PREDIKTA351✅<br>🫰Na Copy Na Ang Config👌</div>
 
   <script>
-    const newUuid = "92c4d760‑71b2‑4127‑9e88‑d35a7c2f18b9";
-    const pathVal = "/PREDIKTA‑351";
+    const newUuid = "92c4d760-71b2-4127-9e88-d35a7c2f18b9";
+    const pathTr = "/tr‑PREDIKTA‑351";
+    const pathVl = "/vl‑PREDIKTA351";
+    const pathVm = "/vm‑PREDIKTA351";
+    const pathSs = "/ss‑PREDIKTA351";
     const trojanPass = "PREDIKTA‑351";
-
-    const templates = {
-      trojanWs: "trojan://" + trojanPass + "@firebaseremoteconfigrealtime.googleapis.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=" + encodeURIComponent(pathVal) + "&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA351‑Trojan‑WS",
-      vlessWs: "vless://" + newUuid + "@firebaseremoteconfigrealtime.googleapis.com:443?encryption=none&type=ws&host=HOST_PLACEHOLDER&headerType=none&path=" + encodeURIComponent(pathVal) + "&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA351‑VLESS‑WS",
-      vmessWs: () => {
-        const h = document.getElementById('dynamicHost').value;
-        const obj = {
-          "add":"apps.google.com",
-          "port":"443",
-          "id": newUuid,
-          "aid":"0",
-          "scy":"chacha20‑poly1305",
-          "net":"ws",
-          "type":"none",
-          "host":h,
-          "path": pathVal,
-          "tls":"tls",
-          "sni":"firebaseremoteconfigrealtime.googleapis.com",
-          "ps":"PREDIKTA351‑VMESS‑WS",
-          "v":"2"
-        };
-        return "vmess://" + btoa(JSON.stringify(obj));
-      },
-      ssWs: "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQS0zNTE=@apps.google.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=" + encodeURIComponent(pathVal) + "&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA351‑Shadowsocks‑WS"
-    };
 
     function updateConfigs() {
       const host = document.getElementById('dynamicHost').value;
-      document.getElementById('box‑trojan‑ws').innerText = templates.trojanWs.replace(/HOST_PLACEHOLDER/g, host);
-      document.getElementById('box‑vless‑ws').innerText = templates.vlessWs.replace(/HOST_PLACEHOLDER/g, host);
-      document.getElementById('box‑vmess‑ws').innerText = templates.vmessWs();
-      document.getElementById('box‑ss‑ws').innerText = templates.ssWs.replace(/HOST_PLACEHOLDER/g, host);
+      document.getElementById('boxTrojanWs').innerText =
+        "trojan://" + trojanPass + "@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + host + "#PREDIKTA351‑Trojan‑WS";
+
+      document.getElementById('boxVlessWs').innerText =
+        "vless://" + newUuid + "@" + host + ":443?encryption=none&type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathVl) + "&security=tls&sni=" + host + "#PREDIKTA351‑VLESS‑WS";
+
+      const obj = {
+        "add": host,
+        "port": "443",
+        "id": newUuid,
+        "aid": "0",
+        "scy": "chacha20‑poly1305",
+        "net": "ws",
+        "type": "none",
+        "host": host,
+        "path": pathVm,
+        "tls": "tls",
+        "sni": host,
+        "ps": "PREDIKTA351‑VMESS‑WS",
+        "v": "2"
+      };
+      document.getElementById('boxVmessWs').innerText = "vmess://" + btoa(JSON.stringify(obj));
+
+      document.getElementById('boxSsWs').innerText =
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQS0zNTE=@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathSs) + "&security=tls&sni=" + host + "#PREDIKTA351‑Shadowsocks‑WS";
     }
 
     function copyConfig(elementId) {
@@ -357,7 +356,7 @@
     }
 
     function showToast() {
-      const toast = document.getElementById('toast‑notification');
+      const toast = document.getElementById('toast-notification');
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
