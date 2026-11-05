@@ -21,7 +21,7 @@
       "port": 10003,
       "protocol": "vless",
       "settings": {
-        "clients": [{"id": "92c4d760-71b2-4127-9e88-d35a7c2f18b9"}],
+        "clients": [{"id": "a1b2c3d4-5678-40ef-98ab-cdef01234589"}],
         "decryption": "none"
       },
       "streamSettings": {
@@ -34,7 +34,7 @@
     {
       "port": 10005,
       "protocol": "vmess",
-      "settings": {"clients": [{"id": "92c4d760-71b2-4127-9e88-d35a7c2f18b9","alterId": 0}]},
+      "settings": {"clients": [{"id": "a1b2c3d4-5678-40ef-98ab-cdef01234589","alterId": 0}]},
       "streamSettings": {
         "network": "ws",
         "wsSettings": {"path": "/vm-PREDIKTA351"},
