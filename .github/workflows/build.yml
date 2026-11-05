@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: predikta351/predikta-351:replika
+          tags: prediktaa351/predikta351:replika
