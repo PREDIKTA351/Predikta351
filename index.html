@@ -219,7 +219,6 @@
       text-align: center;
     }
 
-    /* Custom Toast Notification Styles */
     #toast-notification {
       position: fixed;
       bottom: 30px;
@@ -256,12 +255,11 @@
   </header>
 
   <div class="config-control">
-    <label for="dynamicHost">Auto-Detected Clean Host:</label>
-    <input type="text" id="dynamicHost" value="" oninput="updateConfigs()" placeholder="Detecting clean host..." />
+    <label for="dynamicHost">Auto‑Detected Clean Host:</label>
+    <input type="text" id="dynamicHost" value="" placeholder="Detecting clean host..." />
   </div>
 
   <main class="grid">
-    <!-- TROJAN WS -->
     <div class="card">
       <div class="card-header">
         <h2>Trojan</h2>
@@ -273,7 +271,6 @@
       </div>
     </div>
 
-    <!-- VLESS WS -->
     <div class="card">
       <div class="card-header">
         <h2>VLESS</h2>
@@ -285,7 +282,6 @@
       </div>
     </div>
 
-    <!-- VMESS WS -->
     <div class="card">
       <div class="card-header">
         <h2>VMess</h2>
@@ -297,7 +293,6 @@
       </div>
     </div>
 
-    <!-- SHADOWSOCKS WS -->
     <div class="card">
       <div class="card-header">
         <h2>Shadowsocks</h2>
@@ -314,29 +309,45 @@
     &copy; PREDIKTA351 System &bull; All Rights Reserved
   </footer>
 
-  <!-- Custom Toast Notification Element -->
   <div id="toast-notification">✅CONGRATS IDOL✅<br>🫰Na Copy Na Ang Config👌</div>
 
   <script>
-    const templates = {
-      trojanWs: "trojan://PREDIKTA-351@firebaseremoteconfigrealtime.googleapis.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Ftr-PREDIKTA-351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA-Trojan-WS",
-      vlessWs: "vless://92c4d760-71b2-4127-9e88-d35a7c2f18b9@firebaseremoteconfigrealtime.googleapis.com:443?encryption=none&type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fvl-PREDIKTA351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA-VLESS-WS",
-      vmessWs: () => {
-        const h = document.getElementById('dynamicHost').value;
-        const obj = {"add":"apps.google.com","port":"443","id":"92c4d760-71b2-4127-9e88-d35a7c2f18b9","aid":"0","scy":"chacha20-poly1305","net":"ws","type":"none","host":h,"path":"/vm-PREDIKTA351","tls":"tls","sni":"firebaseremoteconfigrealtime.googleapis.com","ps":"PREDIKTA-VMESS-WS","v":"2"};
-        return "vmess://" + btoa(JSON.stringify(obj));
-      },
-      ssWs: "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQS0zNTE=@apps.google.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fss-PREDIKTA351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA-SHADOWSOCKS-WS"
-    };
+    const newUuid = "92c4d760-71b2-4127-9e88-d35a7c2f18b9";
+    const pathTr = "/tr‑PREDIKTA‑351";
+    const pathVl = "/vl‑PREDIKTA351";
+    const pathVm = "/vm‑PREDIKTA351";
+    const pathSs = "/ss‑PREDIKTA351";
+    const trojanPass = "PREDIKTA‑351";
 
     function updateConfigs() {
-      let host = document.getElementById('dynamicHost').value.trim();
-      host = host.replace(/^https?:\/\//, '').replace(/\/$/, '');
-      
-      document.getElementById('box-trojan-ws').innerText = templates.trojanWs.replace(/HOST_PLACEHOLDER/g, host);
-      document.getElementById('box-vless-ws').innerText = templates.vlessWs.replace(/HOST_PLACEHOLDER/g, host);
-      document.getElementById('box-vmess-ws').innerText = templates.vmessWs();
-      document.getElementById('box-ss-ws').innerText = templates.ssWs.replace(/HOST_PLACEHOLDER/g, host);
+      const host = document.getElementById('dynamicHost').value.trim();
+      if (!host) return;
+
+      document.getElementById('box-trojan-ws').innerText =
+        "trojan://" + trojanPass + "@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + host + "#PREDIKTA‑Trojan‑WS";
+
+      document.getElementById('box-vless-ws').innerText =
+        "vless://" + newUuid + "@" + host + ":443?encryption=none&type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathVl) + "&security=tls&sni=" + host + "#PREDIKTA‑VLESS‑WS";
+
+      const vmessObj = {
+        "add": host,
+        "port": "443",
+        "id": newUuid,
+        "aid": "0",
+        "scy": "chacha20‑poly1305",
+        "net": "ws",
+        "type": "none",
+        "host": host,
+        "path": pathVm,
+        "tls": "tls",
+        "sni": host,
+        "ps": "PREDIKTA‑VMESS‑WS",
+        "v": "2"
+      };
+      document.getElementById('box-vmess-ws').innerText = "vmess://" + btoa(JSON.stringify(vmessObj));
+
+      document.getElementById('box-ss-ws').innerText =
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQS0zNTE=@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathSs) + "&security=tls&sni=" + host + "#PREDIKTA‑Shadowsocks‑WS";
     }
 
     function copyConfig(elementId) {
@@ -354,17 +365,11 @@
       }, 2500);
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      let host = window.location.host;
-      if (!host) {
-        host = window.location.hostname;
-      }
-      host = host.replace(/^https?:\/\//, '').replace(/\/$/, '');
-      
-      if (host) {
-        document.getElementById('dynamicHost').value = host;
-      }
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentHost = window.location.host;
+      document.getElementById('dynamicHost').value = currentHost;
       updateConfigs();
+      document.getElementById('dynamicHost').addEventListener("input", updateConfigs);
     });
   </script>
 </body>
