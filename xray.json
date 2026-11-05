@@ -12,7 +12,7 @@
       },
       "streamSettings": {
         "network": "ws",
-        "wsSettings": {"path": "/tr-PREDIKTA351"},
+        "wsSettings": {"path": "/tr-PREDIKTA-351"},
         "security": "none"
       },
       "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
@@ -21,7 +21,7 @@
       "port": 10003,
       "protocol": "vless",
       "settings": {
-        "clients": [{"id": "a1b2c3d4-5678-40ef-98ab-cdef01234589"}],
+        "clients": [{"id": "d476606a-2d4e-4f05-8750-f8f418d1a1b4"}],
         "decryption": "none"
       },
       "streamSettings": {
@@ -34,7 +34,7 @@
     {
       "port": 10005,
       "protocol": "vmess",
-      "settings": {"clients": [{"id": "a1b2c3d4-5678-40ef-98ab-cdef01234589","alterId": 0}]},
+      "settings": {"clients": [{"id": "d476606a-2d4e-4f05-8750-f8f418d1a1b4","alterId": 0}]},
       "streamSettings": {
         "network": "ws",
         "wsSettings": {"path": "/vm-PREDIKTA351"},
