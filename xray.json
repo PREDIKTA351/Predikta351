@@ -12,7 +12,7 @@
       },
       "streamSettings": {
         "network": "ws",
-        "wsSettings": {"path": "/tr-PREDIKTA-351"},
+        "wsSettings": {"path": "/tr-PREDIKTA351"},
         "security": "none"
       },
       "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
