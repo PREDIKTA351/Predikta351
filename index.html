@@ -323,8 +323,8 @@
     const fixedSni = "firebaseremoteconfigrealtime.googleapis.com";
 
     function updateConfigs() {
-      const wsHost = document.getElementById('dynamicHost').value.trim();
-      if (!wsHost) return;
+      let wsHost = document.getElementById('dynamicHost').value.trim();
+      if (!wsHost) wsHost = "pending-host";
 
       document.getElementById('box-trojan-ws').innerText =
         "trojan://" + trojanPass + "@" + fixedAddr + ":443?type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + fixedSni + "#GCP‑Trojan‑WS";
