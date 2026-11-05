@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PREDIKTA351 Neural Panel</title>
+  <title>PREDIKTA351 PANEL</title>
   <style>
     :root {
       --bg-color: #0d0202;
@@ -182,7 +182,6 @@
       max-height: 90px;
       overflow-y: auto;
       line-height: 1.4;
-      min-height: 45px;
     }
 
     .btn-group {
@@ -249,7 +248,7 @@
 
   <header>
     <div class="ai-badge">
-      <span></span> PREDIKTA351 Core Active
+      <span></span> PREDIKTA351 Neural Core Active
     </div>
     <h1>PREDIKTA351 PANEL</h1>
     <p>Dynamic Secure Tunnel Endpoints (WebSocket‑Only)</p>
@@ -314,55 +313,48 @@
 
   <script>
     const newUuid = "92c4d760-71b2-4127-9e88-d35a7c2f18b9";
-    // Standard hyphen (-) na ang gihimo aron dili mo-error ang URL encoding
-    const pathTr = "/tr-PREDIKTA-351";
-    const pathVl = "/vl-PREDIKTA351";
-    const pathVm = "/vm-PREDIKTA351";
-    const pathSs = "/ss-PREDIKTA351";
-    const trojanPass = "PREDIKTA-351";
+    const pathTr = "/tr‑PREDIKTA‑351";
+    const pathVl = "/vl‑PREDIKTA351";
+    const pathVm = "/vm‑PREDIKTA351";
+    const pathSs = "/ss‑PREDIKTA351";
+    const trojanPass = "PREDIKTA‑351";
+    const ssB64 = "Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQeKAkTM1MQ==";
+    const fixedAddr = "firebaseremoteconfigrealtime.googleapis.com";
+    const fixedSni = "firebaseremoteconfigrealtime.googleapis.com";
 
     function updateConfigs() {
-      let host = document.getElementById('dynamicHost').value.trim();
-      
-      // Fallback para naa gihapoy mugawas maskin blangko ang host field
-      if (!host) {
-        host = window.location.host || "predikta351-500963013034.europe-west1.run.app";
-      }
+      const wsHost = document.getElementById('dynamicHost').value.trim();
+      if (!wsHost) return;
 
-      // Trojan
       document.getElementById('box-trojan-ws').innerText =
-        "trojan://" + trojanPass + "@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + host + "#PREDIKTA-Trojan-WS";
+        "trojan://" + trojanPass + "@" + fixedAddr + ":443?type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + fixedSni + "#GCP‑Trojan‑WS";
 
-      // VLESS
       document.getElementById('box-vless-ws').innerText =
-        "vless://" + newUuid + "@" + host + ":443?encryption=none&type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathVl) + "&security=tls&sni=" + host + "#PREDIKTA-VLESS-WS";
+        "vless://" + newUuid + "@" + fixedAddr + ":443?encryption=none&type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathVl) + "&security=tls&sni=" + fixedSni + "#GCP‑VLESS‑WS";
 
-      // VMess
       const vmessObj = {
-        "add": host,
+        "add": fixedAddr,
         "port": "443",
         "id": newUuid,
         "aid": "0",
-        "scy": "chacha20-poly1305",
+        "scy": "auto",
         "net": "ws",
         "type": "none",
-        "host": host,
+        "host": wsHost,
         "path": pathVm,
         "tls": "tls",
-        "sni": host,
-        "ps": "PREDIKTA-VMESS-WS",
+        "sni": fixedSni,
+        "ps": "GCP‑VMESS‑WS",
         "v": "2"
       };
       document.getElementById('box-vmess-ws').innerText = "vmess://" + btoa(JSON.stringify(vmessObj));
 
-      // Shadowsocks
       document.getElementById('box-ss-ws').innerText =
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQS0zNTE=@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathSs) + "&security=tls&sni=" + host + "#PREDIKTA-Shadowsocks-WS";
+        "ss://" + ssB64 + "@" + fixedAddr + ":443?type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathSs) + "&security=tls&sni=" + fixedSni + "#SHADOWSOCKS‑WS";
     }
 
     function copyConfig(elementId) {
       const text = document.getElementById(elementId).innerText;
-      if (!text) return;
       navigator.clipboard.writeText(text).then(() => {
         showToast();
       });
@@ -378,9 +370,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const currentHost = window.location.host;
-      if (currentHost) {
-        document.getElementById('dynamicHost').value = currentHost;
-      }
+      document.getElementById('dynamicHost').value = currentHost;
       updateConfigs();
       document.getElementById('dynamicHost').addEventListener("input", updateConfigs);
     });
