@@ -251,11 +251,11 @@
       <span></span> PREDIKTA351 Neural Core Active
     </div>
     <h1>PREDIKTA351 PANEL</h1>
-    <p>Dynamic Secure Tunnel Endpoints (WebSocket‑Only)</p>
+    <p>Dynamic Secure Tunnel Endpoints (WebSocket-Only)</p>
   </header>
 
   <div class="config-control">
-    <label for="dynamicHost">Auto‑Detected Clean Host:</label>
+    <label for="dynamicHost">Auto-Detected Clean Host:</label>
     <input type="text" id="dynamicHost" value="" placeholder="Detecting clean host..." />
   </div>
 
@@ -312,13 +312,13 @@
   <div id="toast-notification">✅CONGRATS IDOL✅<br>🫰Na Copy Na Ang Config👌</div>
 
   <script>
-    const newUuid = "92c4d760-71b2-4127-9e88-d35a7c2f18b9";
-    const pathTr = "/tr‑PREDIKTA‑351";
-    const pathVl = "/vl‑PREDIKTA351";
-    const pathVm = "/vm‑PREDIKTA351";
-    const pathSs = "/ss‑PREDIKTA351";
-    const trojanPass = "PREDIKTA‑351";
-    const ssB64 = "Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQeKAkTM1MQ==";
+    const newUuid = "d476606a-2d4e-4f05-8750-f8f418d1a1b4";
+    const pathTr = "/tr-PREDIKTA-351";
+    const pathVl = "/vl-PREDIKTA351";
+    const pathVm = "/vm-PREDIKTA351";
+    const pathSs = "/ss-PREDIKTA351";
+    const trojanPass = "PREDIKTA-351";
+    const ssB64 = "Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQy0zNTE=";
     const fixedAddr = "firebaseremoteconfigrealtime.googleapis.com";
     const fixedSni = "firebaseremoteconfigrealtime.googleapis.com";
 
@@ -327,10 +327,10 @@
       if (!wsHost) wsHost = "pending-host";
 
       document.getElementById('box-trojan-ws').innerText =
-        "trojan://" + trojanPass + "@" + fixedAddr + ":443?type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + fixedSni + "#GCP‑Trojan‑WS";
+        "trojan://" + trojanPass + "@" + fixedAddr + ":443?type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + fixedSni + "#GCP-Trojan-WS";
 
       document.getElementById('box-vless-ws').innerText =
-        "vless://" + newUuid + "@" + fixedAddr + ":443?encryption=none&type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathVl) + "&security=tls&sni=" + fixedSni + "#GCP‑VLESS‑WS";
+        "vless://" + newUuid + "@" + fixedAddr + ":443?encryption=none&type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathVl) + "&security=tls&sni=" + fixedSni + "#GCP-VLESS-WS";
 
       const vmessObj = {
         "add": fixedAddr,
@@ -344,13 +344,13 @@
         "path": pathVm,
         "tls": "tls",
         "sni": fixedSni,
-        "ps": "GCP‑VMESS‑WS",
+        "ps": "GCP-VMESS-WS",
         "v": "2"
       };
       document.getElementById('box-vmess-ws').innerText = "vmess://" + btoa(JSON.stringify(vmessObj));
 
       document.getElementById('box-ss-ws').innerText =
-        "ss://" + ssB64 + "@" + fixedAddr + ":443?type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathSs) + "&security=tls&sni=" + fixedSni + "#SHADOWSOCKS‑WS";
+        "ss://" + ssB64 + "@" + fixedAddr + ":443?type=ws&host=" + wsHost + "&headerType=none&path=" + encodeURIComponent(pathSs) + "&security=tls&sni=" + fixedSni + "#SHADOWSOCKS-WS";
     }
 
     function copyConfig(elementId) {
