@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PREDIKTA351 PANEL</title>
+  <title>PREDIKTA351 Neural Panel</title>
   <style>
     :root {
-      --bg-color: #0b0101;
-      --card-bg: rgba(90, 0, 0, 0.08);
-      --card-border: rgba(180, 0, 0, 0.35);
-      --red-main: #b80000;
-      --red-light: #ff4d4d;
-      --red-glow: rgba(180, 0, 0, 0.55);
-      --text-color: #ffd8d8;
-      --text-dim: #995555;
+      --bg-color: #0d0202;
+      --card-bg: rgba(139, 0, 0, 0.04);
+      --card-border: rgba(220, 20, 60, 0.25);
+      --bloody-red: #dc143c;
+      --bloody-light: #ff6b6b;
+      --bloody-glow: rgba(220, 20, 60, 0.4);
+      --text-color: #f3f4f6;
+      --text-dim: #9ca3af;
     }
 
     * {
@@ -24,7 +24,7 @@
     }
 
     body {
-      background: radial-gradient(circle at 50% 0%, #330202, var(--bg-color));
+      background: radial-gradient(circle at 50% 0%, #2a0808, var(--bg-color));
       color: var(--text-color);
       min-height: 100vh;
       display: flex;
@@ -42,34 +42,34 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(180, 0, 0, 0.15);
+      background: rgba(220, 20, 60, 0.12);
       border: 1px solid var(--card-border);
       padding: 0.35rem 0.85rem;
       border-radius: 50px;
       font-size: 0.8rem;
-      color: var(--red-light);
+      color: var(--bloody-light);
       margin-bottom: 0.75rem;
-      box-shadow: 0 0 18px var(--red-glow);
+      box-shadow: 0 0 15px var(--bloody-glow);
     }
 
     .ai-badge span {
       width: 8px;
       height: 8px;
-      background: var(--red-main);
+      background: var(--bloody-red);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--red-main);
+      box-shadow: 0 0 8px var(--bloody-red);
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.75; }
-      50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 14px var(--red-main); }
-      100% { transform: scale(0.95); opacity: 0.75; }
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px var(--bloody-red); }
+      100% { transform: scale(0.95); opacity: 0.8; }
     }
 
     header h1 {
       font-size: 2.5rem;
-      background: linear-gradient(135deg, #ffffff, #ff7070, var(--red-main));
+      background: linear-gradient(135deg, #ffffff, var(--bloody-light), var(--bloody-red));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 800;
@@ -87,37 +87,37 @@
       max-width: 1100px;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(16px);
       border-radius: 14px;
       padding: 1.25rem;
       margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      box-shadow: 0 10px 32px rgba(0,0,0,0.6);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .config-control label {
       font-size: 0.85rem;
-      color: var(--red-light);
+      color: var(--bloody-light);
       font-weight: 600;
     }
 
     .config-control input {
       width: 100%;
-      background: rgba(20, 0, 0, 0.6);
-      border: 1px solid rgba(180, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(220, 20, 60, 0.4);
       border-radius: 8px;
       padding: 0.75rem 1rem;
-      color: #ffecec;
+      color: #fff;
       font-size: 0.95rem;
       outline: none;
-      transition: border-color 0.22s, box-shadow 0.22s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .config-control input:focus {
-      border-color: var(--red-main);
-      box-shadow: 0 0 12px var(--red-glow);
+      border-color: var(--bloody-red);
+      box-shadow: 0 0 12px var(--bloody-glow);
     }
 
     .grid {
@@ -131,17 +131,17 @@
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(16px);
       border-radius: 16px;
       padding: 1.5rem;
-      box-shadow: 0 8px 34px 0 rgba(0, 0, 0, 0.42);
-      transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--red-main);
-      box-shadow: 0 14px 44px rgba(180, 0, 0, 0.28);
+      transform: translateY(-4px);
+      border-color: var(--bloody-red);
+      box-shadow: 0 12px 40px rgba(220, 20, 60, 0.25);
     }
 
     .card-header {
@@ -152,15 +152,15 @@
     }
 
     .badge {
-      background: rgba(180, 0, 0, 0.18);
-      color: var(--red-light);
+      background: rgba(220, 20, 60, 0.15);
+      color: var(--bloody-light);
       padding: 0.25rem 0.65rem;
       border-radius: 20px;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      border: 1px solid rgba(180, 0, 0, 0.3);
+      border: 1px solid rgba(220, 20, 60, 0.3);
     }
 
     .card h2 {
@@ -170,19 +170,18 @@
     }
 
     .code-box {
-      background: rgba(15, 0, 0, 0.6);
-      border: 1px solid rgba(120, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 10px;
       padding: 0.85rem;
       font-family: monospace;
       font-size: 0.78rem;
-      color: var(--red-light);
+      color: var(--bloody-light);
       word-break: break-all;
       margin-bottom: 1rem;
       max-height: 90px;
       overflow-y: auto;
       line-height: 1.4;
-      user-select: all;
     }
 
     .btn-group {
@@ -197,19 +196,19 @@
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.22s ease;
+      transition: all 0.2s ease;
       font-size: 0.85rem;
     }
 
     .btn-copy {
-      background: linear-gradient(135deg, #990000, #ff1a1a);
+      background: linear-gradient(135deg, #dc143c, #8b0000);
       color: #fff;
-      box-shadow: 0 4px 16px rgba(180, 0, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(220, 20, 60, 0.35);
     }
 
     .btn-copy:hover {
-      opacity: 0.88;
-      box-shadow: 0 7px 22px rgba(180, 0, 0, 0.62);
+      opacity: 0.9;
+      box-shadow: 0 6px 20px rgba(220, 20, 60, 0.55);
     }
 
     footer {
@@ -220,23 +219,24 @@
       text-align: center;
     }
 
+    /* Custom Toast Notification Styles */
     #toast-notification {
       position: fixed;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: linear-gradient(135deg, #5c0000, #b80000);
+      background: linear-gradient(135deg, #dc143c, #8b0000);
       color: #fff;
       padding: 12px 24px;
       border-radius: 30px;
       font-weight: 700;
       font-size: 0.95rem;
-      box-shadow: 0 10px 32px rgba(0,0,0,0.65);
-      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.32s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
       opacity: 0;
       z-index: 1000;
       text-align: center;
-      border: 1px solid rgba(255, 80, 80, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     #toast-notification.show {
@@ -249,59 +249,63 @@
 
   <header>
     <div class="ai-badge">
-      <span></span> PREDIKTA351 Core Active
+      <span></span> PREDIKTA351 Neural Core Active
     </div>
     <h1>PREDIKTA351 PANEL</h1>
     <p>Dynamic Secure Tunnel Endpoints (WebSocket‑Only)</p>
   </header>
 
   <div class="config-control">
-    <label for="dynamicHost">Dynamic Host / Server Domain (Automatic):</label>
-    <input type="text" id="dynamicHost" value="" oninput="updateConfigs()" />
+    <label for="dynamicHost">Auto-Detected Clean Host:</label>
+    <input type="text" id="dynamicHost" value="" oninput="updateConfigs()" placeholder="Detecting clean host..." />
   </div>
 
   <main class="grid">
+    <!-- TROJAN WS -->
     <div class="card">
       <div class="card-header">
         <h2>Trojan</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="boxTrojanWs"></div>
+      <div class="code-box" id="box-trojan-ws"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('boxTrojanWs')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('box-trojan-ws')">Copy Config</button>
       </div>
     </div>
 
+    <!-- VLESS WS -->
     <div class="card">
       <div class="card-header">
         <h2>VLESS</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="boxVlessWs"></div>
+      <div class="code-box" id="box-vless-ws"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('boxVlessWs')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('box-vless-ws')">Copy Config</button>
       </div>
     </div>
 
+    <!-- VMESS WS -->
     <div class="card">
       <div class="card-header">
         <h2>VMess</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="boxVmessWs"></div>
+      <div class="code-box" id="box-vmess-ws"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('boxVmessWs')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('box-vmess-ws')">Copy Config</button>
       </div>
     </div>
 
+    <!-- SHADOWSOCKS WS -->
     <div class="card">
       <div class="card-header">
         <h2>Shadowsocks</h2>
         <span class="badge">WebSocket</span>
       </div>
-      <div class="code-box" id="boxSsWs"></div>
+      <div class="code-box" id="box-ss-ws"></div>
       <div class="btn-group">
-        <button class="btn btn-copy" onclick="copyConfig('boxSsWs')">Copy Config</button>
+        <button class="btn btn-copy" onclick="copyConfig('box-ss-ws')">Copy Config</button>
       </div>
     </div>
   </main>
@@ -310,72 +314,36 @@
     &copy; PREDIKTA351 System &bull; All Rights Reserved
   </footer>
 
-  <div id="toast-notification">✅PREDIKTA351✅<br>🫰Na Copy Na Ang Config👌</div>
+  <!-- Custom Toast Notification Element -->
+  <div id="toast-notification">✅CONGRATS IDOL✅<br>🫰Na Copy Na Ang Config👌</div>
 
   <script>
-    const newUuid = "92c4d760-71b2-4127-9e88-d35a7c2f18b9";
-    const pathTr = "/tr-PREDIKTA-351";
-    const pathVl = "/vl-PREDIKTA351";
-    const pathVm = "/vm-PREDIKTA351";
-    const pathSs = "/ss-PREDIKTA351";
-    const trojanPass = "PREDIKTA-351";
+    const templates = {
+      trojanWs: "trojan://PREDIKTA-351@firebaseremoteconfigrealtime.googleapis.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Ftr-PREDIKTA-351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA-Trojan-WS",
+      vlessWs: "vless://92c4d760-71b2-4127-9e88-d35a7c2f18b9@firebaseremoteconfigrealtime.googleapis.com:443?encryption=none&type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fvl-PREDIKTA351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA-VLESS-WS",
+      vmessWs: () => {
+        const h = document.getElementById('dynamicHost').value;
+        const obj = {"add":"apps.google.com","port":"443","id":"92c4d760-71b2-4127-9e88-d35a7c2f18b9","aid":"0","scy":"chacha20-poly1305","net":"ws","type":"none","host":h,"path":"/vm-PREDIKTA351","tls":"tls","sni":"firebaseremoteconfigrealtime.googleapis.com","ps":"PREDIKTA-VMESS-WS","v":"2"};
+        return "vmess://" + btoa(JSON.stringify(obj));
+      },
+      ssWs: "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQS0zNTE=@apps.google.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fss-PREDIKTA351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA-SHADOWSOCKS-WS"
+    };
 
     function updateConfigs() {
-      const host = document.getElementById('dynamicHost').value;
-      document.getElementById('boxTrojanWs').innerText =
-        "trojan://" + trojanPass + "@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathTr) + "&security=tls&sni=" + host + "#PREDIKTA351-Trojan-WS";
-
-      document.getElementById('boxVlessWs').innerText =
-        "vless://" + newUuid + "@" + host + ":443?encryption=none&type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathVl) + "&security=tls&sni=" + host + "#PREDIKTA351-VLESS-WS";
-
-      const obj = {
-        "add": host,
-        "port": "443",
-        "id": newUuid,
-        "aid": "0",
-        "scy": "chacha20-poly1305",
-        "net": "ws",
-        "type": "none",
-        "host": host,
-        "path": pathVm,
-        "tls": "tls",
-        "sni": host,
-        "ps": "PREDIKTA351-VMESS-WS",
-        "v": "2"
-      };
-      document.getElementById('boxVmessWs').innerText = "vmess://" + btoa(JSON.stringify(obj));
-
-      document.getElementById('boxSsWs').innerText =
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpQUkVESUtUQS0zNTE=@" + host + ":443?type=ws&host=" + host + "&headerType=none&path=" + encodeURIComponent(pathSs) + "&security=tls&sni=" + host + "#PREDIKTA351-Shadowsocks-WS";
+      let host = document.getElementById('dynamicHost').value.trim();
+      host = host.replace(/^https?:\/\//, '').replace(/\/$/, '');
+      
+      document.getElementById('box-trojan-ws').innerText = templates.trojanWs.replace(/HOST_PLACEHOLDER/g, host);
+      document.getElementById('box-vless-ws').innerText = templates.vlessWs.replace(/HOST_PLACEHOLDER/g, host);
+      document.getElementById('box-vmess-ws').innerText = templates.vmessWs();
+      document.getElementById('box-ss-ws').innerText = templates.ssWs.replace(/HOST_PLACEHOLDER/g, host);
     }
 
     function copyConfig(elementId) {
       const text = document.getElementById(elementId).innerText;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => {
-          showToast();
-        }).catch(err => {
-          fallbackCopy(text);
-        });
-      } else {
-        fallbackCopy(text);
-      }
-    }
-
-    function fallbackCopy(text) {
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      textarea.style.position = "fixed";
-      document.body.appendChild(textarea);
-      textarea.focus();
-      textarea.select();
-      try {
-        document.execCommand('copy');
+      navigator.clipboard.writeText(text).then(() => {
         showToast();
-      } catch (err) {
-        alert("Dili ma-copy automatic. Palihog i-manual select.");
-      }
-      document.body.removeChild(textarea);
+      });
     }
 
     function showToast() {
@@ -386,13 +354,18 @@
       }, 2500);
     }
 
-    window.onload = function() {
-      const currentHost = window.location.host;
-      if (currentHost) {
-        document.getElementById('dynamicHost').value = currentHost;
+    window.addEventListener('DOMContentLoaded', () => {
+      let host = window.location.host;
+      if (!host) {
+        host = window.location.hostname;
+      }
+      host = host.replace(/^https?:\/\//, '').replace(/\/$/, '');
+      
+      if (host) {
+        document.getElementById('dynamicHost').value = host;
       }
       updateConfigs();
-    };
+    });
   </script>
 </body>
 </html>
