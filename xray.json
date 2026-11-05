@@ -7,12 +7,12 @@
       "port": 10001,
       "protocol": "trojan",
       "settings": {
-        "clients": [{"password": "PREDIKTA-351"}],
+        "clients": [{"password": "predikta-351"}],
         "allowInsecure": true
       },
       "streamSettings": {
         "network": "ws",
-        "wsSettings": {"path": "/tr-PREDIKTA-351"},
+        "wsSettings": {"path": "/trojan-predikta351"},
         "security": "none"
       },
       "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
@@ -21,12 +21,12 @@
       "port": 10003,
       "protocol": "vless",
       "settings": {
-        "clients": [{"id": "d476606a-2d4e-4f05-8750-f8f418d1a1b4"}],
+        "clients": [{"id": "b1b2c3d4-5678-40ef-98ab-cdef01234589"}],
         "decryption": "none"
       },
       "streamSettings": {
         "network": "ws",
-        "wsSettings": {"path": "/vl-PREDIKTA351"},
+        "wsSettings": {"path": "/vless-predikta351"},
         "security": "none"
       },
       "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
@@ -34,10 +34,10 @@
     {
       "port": 10005,
       "protocol": "vmess",
-      "settings": {"clients": [{"id": "d476606a-2d4e-4f05-8750-f8f418d1a1b4","alterId": 0}]},
+      "settings": {"clients": [{"id": "b1b2c3d4-5678-40ef-98ab-cdef01234589","alterId": 0}]},
       "streamSettings": {
         "network": "ws",
-        "wsSettings": {"path": "/vm-PREDIKTA351"},
+        "wsSettings": {"path": "/vmess-predikta351"},
         "security": "none"
       },
       "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
@@ -45,10 +45,10 @@
     {
       "port": 10007,
       "protocol": "shadowsocks",
-      "settings": {"method": "chacha20-ietf-poly1305","password": "PREDIKTA-351","network":"tcp"},
+      "settings": {"method": "chacha20-ietf-poly1305","password": "predikta-351","network":"tcp"},
       "streamSettings": {
         "network": "ws",
-        "wsSettings": {"path": "/ss-PREDIKTA351"},
+        "wsSettings": {"path": "/ss-predikta351"},
         "security": "none"
       }
     }
