@@ -1,0 +1,63 @@
+{
+  "log": {
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 10001,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [{"password": "PREDIKTA‑351"}],
+        "allowInsecure": true
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {"path": "/tr‑PREDIKTA‑351"},
+        "security": "none"
+      },
+      "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
+    },
+    {
+      "port": 10003,
+      "protocol": "vless",
+      "settings": {
+        "clients": [{"id": "92c4d760‑71b2‑4127‑9e88‑d35a7c2f18b9"}],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {"path": "/vl‑PREDIKTA351"},
+        "security": "none"
+      },
+      "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
+    },
+    {
+      "port": 10005,
+      "protocol": "vmess",
+      "settings": {"clients": [{"id": "92c4d760‑71b2‑4127‑9e88‑d35a7c2f18b9","alterId": 0}]},
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {"path": "/vm‑PREDIKTA351"},
+        "security": "none"
+      },
+      "sniffing": {"enabled": true, "destOverride": ["http","tls"]}
+    },
+    {
+      "port": 10007,
+      "protocol": "shadowsocks",
+      "settings": {"method": "chacha20‑ietf‑poly1305","password": "PREDIKTA‑351","network":"tcp"},
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {"path": "/ss‑PREDIKTA351"},
+        "security": "none"
+      }
+    }
+  ],
+  "outbounds": [
+    {"protocol": "freedom", "settings": {}}
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": []
+  }
+}
