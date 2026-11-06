@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: connfigg/predikta351:latest
+          tags: connfigg111/predikta351:latest
