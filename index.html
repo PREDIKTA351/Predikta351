@@ -317,14 +317,14 @@
 
   <script>
     const templates = {
-      trojanWs: "trojan://predikta-351@firebaseremoteconfigrealtime.googleapis.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Ftrojan-predikta351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA351-GCP-Trojan-WS",
-      vlessWs: "vless://b1b2c3d4-5678-40ef-98ab-cdef01234589@firebaseremoteconfigrealtime.googleapis.com:443?encryption=none&type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fvless-predikta351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA351-GCP-VLESS-WS",
+      trojanWs: "trojan://predikta-351@firebaseremoteconfigrealtime.googleapis.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Ftrojan-predikta351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#卩ⓇєⒹĮⓀ𝓽Ａ_➂❺❶ 𝙻𝙸𝙼𝙸𝚃𝙻𝙴𝚂𝚂 GCP",
+      vlessWs: "vless://b1b2c3d4-5678-40ef-98ab-cdef01234589@firebaseremoteconfigrealtime.googleapis.com:443?encryption=none&type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fvless-predikta351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#卩ⓇєⒹĮⓀ𝓽Ａ_➂❺❶ 𝙻𝙸𝙼𝙸𝚃𝙻𝙴𝚂𝚂 GCP",
       vmessWs: () => {
         const h = document.getElementById('dynamicHost').value;
-        const obj = {"add":"apps.google.com","port":"443","id":"b1b2c3d4-5678-40ef-98ab-cdef01234589","aid":"0","scy":"chacha20-poly1305","net":"ws","type":"none","host":h,"path":"/vmess-predikta351","tls":"tls","sni":"firebaseremoteconfigrealtime.googleapis.com","ps":"PREDIKTA351-GCP-VMESS-WS","v":"2"};
+        const obj = {"add":"apps.google.com","port":"443","id":"b1b2c3d4-5678-40ef-98ab-cdef01234589","aid":"0","scy":"chacha20-poly1305","net":"ws","type":"none","host":h,"path":"/vmess-predikta351","tls":"tls","sni":"firebaseremoteconfigrealtime.googleapis.com","ps":"卩ⓇєⒹĮⓀ𝓽Ａ_➂❺❶ 𝙻𝙸𝙼𝙸𝚃𝙻𝙴𝚂𝚂 GCP","v":"2"};
         return "vmess://" + btoa(JSON.stringify(obj));
       },
-      ssWs: "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwcmVkaWt0YS0zNTE=@apps.google.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fss-predikta351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#PREDIKTA351-GCP-SHADOWSOCKS-WS"
+      ssWs: "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpwcmVkaWt0YS0zNTE=@apps.google.com:443?type=ws&host=HOST_PLACEHOLDER&headerType=none&path=%2Fss-predikta351&security=tls&sni=firebaseremoteconfigrealtime.googleapis.com#卩ⓇєⒹĮⓀ𝓽Ａ_➂❺❶ 𝙻𝙸𝙼𝙸𝚃𝙻𝙴𝚂𝚂 GCP"
     };
 
     function updateConfigs() {
