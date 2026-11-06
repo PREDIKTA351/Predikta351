@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: prediktaa351/predikta351:replika
+          tags: connfigg/predikta351:latest
